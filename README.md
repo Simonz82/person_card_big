@@ -1,7 +1,6 @@
-<h2><span style="text-decoration: underline;"><strong>🧑🏻 Person card big for home assistant</strong></span></h2>
+<h2><span style="text-decoration: underline;"><strong>🧑🏻 Big Person card for home assistant</strong></span></h2>
 
-CARD PERSON con immagini grandi:
-
+CARD PERSON con immagini grandi, presenza e altre info:
 <p><img src="example/example1.jpg" alt="" /></p>
 
 <p>Volevo condividere una scheda che ho creato con l'aiuto delle varie community per visualizzare le informazioni di una persona tramite l'utilizzo dell'app HA companion.</p>
@@ -20,7 +19,8 @@ poi ...
 6. in HA create una card manuale e incollate il contenuto del file: person_card_big.yaml
 7. all'interno del codice della card e del codice inserito nel sensor.yaml, dovete andare a sostituire tutti i miei sensori chiamati simone, con i vostri appena abilitati
 
-<strong>Alla fine ci troveremo ad avere i 2 simboli come vedete in questa foto: Simone è in casa e Martina è fuori casa</strong><br />
+<p>Alla fine ci troveremo ad avere i 2 simboli come vedete in questa foto: Simone è in casa e Martina è fuori casa<p>
+<p><img src="example/example2.jpg" alt="" /></p>
 
 
 <p>Enjoy!</p>
