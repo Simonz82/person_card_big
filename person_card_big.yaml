@@ -1,0 +1,95 @@
+type: horizontal-stack
+cards:
+  - type: custom:stack-in-card
+    card_mod:
+      style: |
+        ha-card {
+        border: none !important;
+        --ha-card-border-width: 0;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: rgba(0,0,0,0);
+        }
+    cards:
+      - elements:
+          - type: custom:button-card
+            show_label: true
+            custom_fields:
+              icon: |
+                [[[
+                  var sensors = states['sensor.simone_tablet_status'].state; #sensore creato in sensor.yaml per avere lo stato home e not_home
+                  return '<img src= "/local/images/person/icon/' + sensors + '.png" width="40" height="40">' #percorso per le immagini degli stati home e not_home
+                ]]]
+            styles:
+              grid:
+                - grid-template-areas: "\"icon n\" \"icon l\""
+              card:
+                - height: 70px
+                - overflow: visible
+                - background: none
+                - border: none
+                - padding-right: 1px
+                - margin-bottom: 280px
+                - margin-left: 160px
+              icon:
+                - justify-self: end
+                - align-self: end
+                - paddig-right: 8px
+                - margin-bottom: "-16px"
+        image: /local/images/imma/simone.png #percorso dell'immagine della nostra foto
+        theme: ios-dark-mode
+        type: picture-elements
+      - type: custom:mushroom-chips-card
+        card_mod:
+          style: |
+            ha-card {
+              --chip-font-size: 0.4em;
+              --chip-icon-size: 0.6em;
+              --chip-border-width: 0;
+              --chip-box-shadow: none;
+              --chip-background: none;
+              --chip-border: none;
+              --chip-spacing: none;
+              --chip-font-weight: bold;
+            }
+        chips:
+          - type: template
+            entity: sensor.simone_battery_level #sensore livello batteria
+            icon: "{{states('sensor.simone_battery_icon')}}"
+            icon_color: "{{states('sensor.simone_battery_color')}}"
+            content: "{{states('sensor.simone_battery_level')}}%"
+            tap_action:
+              action: more-info
+          - type: template
+            entity: sensor.simone_internal_storage #sensore memoria disponibile nello smartphone
+            icon: mdi:harddisk
+            content: "{{states('sensor.simone_internal_storage')}}%"
+            tap_action:
+              action: more-info
+          - type: template
+            entity: sensor.simone_network_type #sensore tipo di rete
+            icon: |-
+              {% if is_state('sensor.simone_network_type','wifi')%}
+               mdi:wifi 
+              {% elif is_state('sensor.simone_network_type','cellular')%}
+               mdi:signal-5g
+              {% else %} mdi:network-strength-off
+              {% endif %}  
+            icon_color: |-
+              {% if is_state('sensor.simone_network_type','wifi')%}
+               green
+              {% elif is_state('sensor.simone_network_type','cellular')%}
+               red
+              {% else %} grey
+              {% endif %}   
+            content: ""
+            hold_action:
+              action: none
+            double_tap_action:
+              action: none
+            tap_action:
+              action: more-info
+        alignment: center
+grid_options:
+  columns: 12
+  rows: 3

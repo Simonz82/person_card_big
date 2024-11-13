@@ -1,0 +1,44 @@
+# Sensori Batteria per Person Card
+- platform: template
+  sensors:
+    simone_battery_icon:
+      friendly_name: "simone battery icon"
+      value_template: >
+        {% set state = states('sensor.simone_battery_level')|float %}
+        {% if state >= 0 and state < 10 %} mdi:battery-10
+        {% elif state >= 10 and state < 20 %} mdi:battery-20
+        {% elif state >= 20 and state < 30 %} mdi:battery-30
+        {% elif state >= 30 and state < 40 %} mdi:battery-40
+        {% elif state >= 40 and state < 50 %} mdi:battery-50
+        {% elif state >= 50 and state < 60 %} mdi:battery-60
+        {% elif state >= 60 and state < 70 %} mdi:battery-70
+        {% elif state >= 70 and state < 80 %} mdi:battery-80
+        {% elif state >= 80 and state < 95 %} mdi:battery-90
+        {% else %} mdi:battery
+        {% endif %}
+- platform: template
+  sensors:
+    simone_battery_color:
+      friendly_name: "simone battery color"
+      value_template: >
+        {% set state = states('sensor.simone_battery_level')|float %}
+        {% if state >= 0 and state < 20 %} red
+        {% elif state >= 20 and state < 40 %} orange
+        {% elif state >= 40 and state < 50 %} yellow
+        {% else %} green
+        {% endif %}
+
+
+
+#Sensore Posizione home o not_home
+- platform: template
+  sensors:
+    simone_tablet_status: #cambiate nome
+      friendly_name: "Stato di Simone" #cambiate nome
+      value_template: >
+        {% if is_state('person.simone', 'home') %} #cambiate nome
+          home
+        {% else %}
+          not_home
+        {% endif %}
+      icon_template: mdi:map-marker-radius
