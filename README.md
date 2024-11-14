@@ -16,8 +16,9 @@ poi ...
 1. nel file HA sensor.yaml, inserire il contenuto di person_card_big_sensor.yaml, se non si dispone del file sensor.yaml è necessario creare sensor.yaml nella cartella config/, aprire il file configuration.yaml e inserire questa riga: sensor: !include sensor.yaml
 2. sul vostro smartphone installare l'app Home Assistant companion
 3. dall'app andate in impostazioni, app complementare, gestione sensori, abilitate tutti i sensori che servono e che trovare nei vari file di configurazioni: sensori di rete,sensori ultimo riavvio, sensori di prossimità, sensori batteria, sensori di archiviazione, sensori di attività, sensori di posizione.
-6. in HA create una card manuale e incollate il contenuto del file: person_card_big.yaml
-7. all'interno del codice della card e del codice inserito nel sensor.yaml, dovete andare a sostituire tutti i miei sensori chiamati simone, con i vostri appena abilitati
+4. incollare le immagine delle vostre foto dentro la cartella www/person e le icone dentro la cartella www/person/icon
+5. in HA create una card manuale e incollate il contenuto del file: person_card_big.yaml
+6. all'interno del codice della card e del codice inserito nel sensor.yaml, dovete andare a sostituire tutti i miei sensori chiamati simone, con i vostri appena abilitati
 
 <p>Alla fine ci troveremo ad avere i 2 simboli come vedete in questa foto: Simone è in casa e Martina è fuori casa<p>
 <p><img src="example/example2.jpg" alt="" /></p>
