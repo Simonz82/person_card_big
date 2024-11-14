@@ -1,6 +1,6 @@
 <h2><span style="text-decoration: underline;"><strong>🧑🏻 Big Person card for home assistant</strong></span></h2>
 
-CARD PERSON con immagini grandi, presenza e altre info:
+CARD PERSON con immagini grandi, presenza e altre info, per com'è impostata la geolocalizzazione mostra solo lo stato di HOME e NOT HOME (non tutte le zone censite in HA):
 <p><img src="example/example1.jpg" alt="" /></p>
 
 <p>Volevo condividere una scheda che ho creato con l'aiuto delle varie community per visualizzare le informazioni di una persona tramite l'utilizzo dell'app HA companion.</p>
